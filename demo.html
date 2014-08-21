@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>PicHover.js demo</title>
+<STYLE type=text/css>
+body,ul,li,a,img,h1{margin:0;padding:0;border:0;}
+li{list-style:none;float:left;margin:8px;}
+.pngBgImgsShow{background:#068F77;display:block;margin-bottom:28px;padding-top:8px;padding-bottom:8px;color:#fff;}
+.pngBgImgsShow img{margin:8px 18px;}
+h1{font-size:18px;height:28px;line-height:28px;border-bottom:#59AFB0 dashed 1px;}
+ul{width:100%;clear:both;}
+
+/*There are two steps*/
+
+/*step.01 Add mouseover background image into span*/
+
+  /*no text and background is a icon*/
+#demo1 span{background:url("images/bg1.png") no-repeat;background-position:90% 90%;}
+#demo2 span{background:url("images/bg1.png") no-repeat;background-position:90% 90%;}
+#demo3 span{background:url("images/bg2.png") no-repeat;background-position:center 88px;_background-position:-1px 88px;}
+
+  /*have text and repeat background*/
+#demo4 span{background:url("images/bg3.png");}
+#demo4 a{text-decoration:none;color:#fff;font-size:14px;}
+#demo4 div{position:absolute;z-index:10;bottom:10px;left:0;width:100%;text-align:center;}
+
+#demo5 span{background:url("images/bg3.png");}
+#demo5 a{text-decoration:none;color:#fff;font-size:14px;}
+#demo5 div{position:absolute;z-index:10;bottom:10px;left:0;width:100%;text-align:center;}
+</STYLE>
+<script src="PicHover.js" type="text/javascript"></script>
+<!--[if IE 6]>
+<script src="DD_belatedPNG_0.0.8a-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('span,img'); 
+</script>
+<![endif]-->
+</HEAD>
+<BODY>
+<span class="pngBgImgsShow"><h1>The use of PNG background picture:</h1>Picture 1.<img src="images/bg1.png">Picture 2.<img src="images/bg2.png">Picture 3.( It's a point of png )<img src="images/bg3.png"></span>
+    <ul id="demo1">
+				 <li><a href="#"><img src="images/2.jpg"></a></li>
+				 <li><a href="#"><img src="images/3.jpg"></a></li>
+	</ul>
+	<ul id="demo2">
+				 <li><a href="#"><img src="images/1.jpg"></a></li>
+	</ul>
+	<ul id="demo3">
+				 <li><a href="#"><img src="images/4.jpg"></a></li>
+				 <li><a href="#"><img src="images/5.jpg"></a></li>
+	</ul>
+	<ul id="demo4">
+				 <li><a href="#"><img src="images/1.jpg"><div>there is text</div></a></li>
+	</ul>
+	<ul id="demo5">
+				 <li><a href="#"><img src="images/4.jpg"><div>there is text</div></a></li>
+				 <li><a href="#"><img src="images/5.jpg"><div>there is text</div></a></li>
+	</ul>
+</BODY>
+<script type="text/javascript">
+/*step.02 Activate program by ID, and ensure that behind the content code*/
+	var p=new PicHover();
+    p.hover('demo1');//ID
+	p.show('demo2');
+	p.hover('demo3');
+    p.showText('demo4','100%','38','0','0');//ID,width of background.png,height,bottom,left (no unit is 'px')
+	p.hoverText('demo5','144','38','0','0');
+</script>
+</HTML>
